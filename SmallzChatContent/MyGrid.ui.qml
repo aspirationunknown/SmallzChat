@@ -29,5 +29,7 @@ Grid {
     Button {
         id: button
         text: qsTr("Button")
+
+        signal clicked(string prompt)
     }
 }
