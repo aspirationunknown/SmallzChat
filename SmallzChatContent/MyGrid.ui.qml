@@ -9,6 +9,7 @@ Grid {
     layoutDirection: Qt.LeftToRight
     horizontalItemAlignment: Grid.AlignHCenter
     verticalItemAlignment: Grid.AlignTop
+    signal sendPressed(string message)
     TextArea {
         id: textArea
         width: grid.width
@@ -41,5 +42,24 @@ Grid {
         text: qsTr("Send")
         font.pixelSize: 14
         icon.source: "images/icons8-send-button-24.png"
+        onClicked: {
+            // emit the signal with the current input text
+            grid.sendPressed(textEdit.text)
+            // clear the input
+            textEdit.text = ""
+        }
     }
+
+    // Default handler for the sendPressed signal. Use a named JS function with
+    // a formal parameter to avoid the deprecated injection of parameters into
+    // signal handlers.
+    function handleSend(message) {
+        // show the sent message in the response area (append)
+        if (textArea.text && textArea.text.length > 0)
+            textArea.text = textArea.text + "\n\n" + message
+        else
+            textArea.text = message
+    }
+
+    onSendPressed: handleSend(message)
 }
