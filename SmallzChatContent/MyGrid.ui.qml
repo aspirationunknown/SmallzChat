@@ -40,6 +40,6 @@ Grid {
         id: sendButton
         text: qsTr("Send")
         font.pixelSize: 14
-        icon.source: "../Images/icons8-send-button-24.png"
+        icon.source: "images/icons8-send-button-24.png"
     }
 }
