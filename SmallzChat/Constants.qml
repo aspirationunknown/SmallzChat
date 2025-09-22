@@ -1,6 +1,5 @@
 pragma Singleton
 import QtQuick
-import QtQuick.Studio.Application
 
 QtObject {
     readonly property int width: 800
@@ -20,8 +19,7 @@ QtObject {
 
     readonly property color backgroundColor: "#EAEAEA"
 
-
-    property StudioApplication application: StudioApplication {
-        fontPath: Qt.resolvedUrl("../SmallzChatContent/" + relativeFontDirectory)
-    }
+    // Replaced StudioApplication usage with a plain URL property so the app
+    // doesn't require the QtQuick.Studio.Application module at runtime.
+    property url fontPath: Qt.resolvedUrl("../SmallzChatContent/" + relativeFontDirectory)
 }

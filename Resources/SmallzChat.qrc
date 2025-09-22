@@ -1,0 +1,14 @@
+
+<RCC>
+<qresource>
+<file>qtquickcontrols2.conf</file>
+<file>SmallzChat.qmlproject</file>
+<file>SmallzChat/Constants.qml</file>
+<file>SmallzChat/EventListModel.qml</file>
+<file>SmallzChat/EventListSimulator.qml</file>
+<file>SmallzChat/qmldir</file>
+<file>SmallzChatContent/App.qml</file>
+<file>SmallzChatContent/MainScreen.ui.qml</file>
+<file>SmallzChatContent/MyGrid.ui.qml</file>
+</qresource>
+</RCC>
